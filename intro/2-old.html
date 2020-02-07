@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Intro Megaron</title>
+
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen" />
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/docs.css" rel="stylesheet">
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script src="js3/jquery.js"></script>
+<script src="js3/bootstrap-transition.js"></script>
+<script src="js3/jqModal.js"></script>
+<script src="js3/jquery.min.js"></script>
+<script src="js3/bootstrap-modal.js"></script>
+<script src="js3/bootstrap-alert.js"></script>
+<script src="js3/bootstrap-dropdown.js"></script>
+<script src="js3/bootstrap-scrollspy.js"></script>
+<script src="js3/bootstrap-tab.js"></script>
+<script src="js3/bootstrap-tooltip.js"></script>
+<script src="js3/bootstrap-popover.js"></script>
+<script src="js3/bootstrap-button.js"></script>
+<script src="js3/bootstrap-collapse.js"></script>
+<script src="js3/bootstrap-carousel.js"></script>
+<script src="js3/bootstrap-typeahead.js"></script>
+
+    <script src="js3/bootstrap-affix.js"></script>
+    <script src="js3/holder/holder.js"></script>
+
+    <script src="js3/application.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var currentPosition = 0;
+  var slideWidth = 1100;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+</script>
+
+    <!-- Fav and touch icons -->
+<link rel="apple-touch-icon-megaron" sizes="144x144" href="ico/apple-touch-icon-144-megaron.png">
+<link rel="apple-touch-icon-megaron" sizes="114x114" href="ico/apple-touch-icon-114-megaron.png">
+<link rel="apple-touch-icon-megaron" sizes="72x72" href="ico/apple-touch-icon-72-megaron.png">
+<link rel="apple-touch-icon-megaron" href="ico/apple-touch-icon-57-megaron.png">
+<link rel="shortcut icon" href="ico/favicon.png">
+
+</head>
+
+<body>
+<div id="pageContainer">
+<!-- Slideshow 1 -->
+  <div id="slideshow">
+    <div id="slidesContainer">
+      <div class="slide">
+        <div class="slide-1">
+          <table width="1000" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="450" align="right" valign="bottom"><img src="img/texto-intro.png" width="614" height="96" alt="Intro MBA42" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Slideshow 2 -->
+      <div class="slide">
+        <div class="slide-2"></div>
+      </div>
+      <!-- Slideshow 3 -->
+      <div class="slide">
+        <div class="slide-3">
+          <table width="294" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="82" valign="bottom">
+    <!-- Button to trigger modal -->
+    <a href="#myModal1" role="button" data-toggle="modal"><img src="img/plus.png" width="14" height="14" border="0" /></a>
+     
+    <!-- Modal -->
+    <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> ×</button>
+    <h3 id="myModalLabel">&nbsp;</h3>
+    </div>
+    <div class="modal-body">
+    <p>01.) Investment Management</p>
+    <p>02.) General Management (Innovative Enterprises)</p>
+    <p>03.) General Management (Growing Enterprises)</p>
+    <p>04.) Consulting</p>
+    <p>05.) Private Equity</p>
+    <p>06.) General Management (Emerging Enterprises)</p>
+    <p>07.) Public Private Frontiers</p>
+    <p>08.) Entrepreneurship</p>
+    </div>
+
+    </div>
+     
+<!-- /END MODAL -->        
+              
+            </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Slideshow 4 -->
+      <div class="slide">
+        <div class="slide-4">
+          <table width="860" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="204" valign="bottom">
+                  <!-- Button to trigger modal -->
+    <a href="#myModal2" role="button" data-toggle="modal"><img src="img/plus.png" width="14" height="14" border="0" /></a>
+     
+    <!-- Modal -->
+    <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> ×</button>
+    <h3 id="myModalLabel">&nbsp;</h3>
+    </div>
+    <div class="modal-body">
+    <p>01.) Ability to Think Analytically</p>
+    <p>02.) Ability to Think Creatively</p>
+    <p>03.) Ability to Get Things Done</p>
+    <p>04.) Aptitude to Lead People</p>
+    <p>05.) Ability to Deal with Uncertainty, Diversity, and Frustration</p>
+    <p>06.) Courage to Question the Status Quo</p>
+    <p>07.) Aptitude to Communicate</p>
+    <p>08.) Ability to Bring out the Best in People</p>
+
+    </div>
+    </div>      
+<!-- /END MODAL -->        
+
+              
+              
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Slideshow 5 -->
+      <div class="slide">
+        <div class="slide-5"></div>
+      </div>
+      <!-- Slideshow 6 -->
+      <div class="slide">
+        <div class="slide-6"></div>
+      </div>
+      <!-- Slideshow 7 -->
+      <div class="slide">
+        <div class="slide-7"></div>
+      </div>
+      <!-- Slideshow 8 -->
+      <div class="slide">
+        <div class="slide-8"></div>
+      </div>
+      <!-- Slideshow 9 -->
+      <div class="slide">
+        <div class="slide-9"></div>
+      </div>
+      <!-- Slideshow 10 -->
+      <div class="slide">
+        <div class="slide-10"></div>
+      </div>
+      <!-- Slideshow 11 -->
+      <div class="slide">
+        <div class="slide-11">
+          <table width="1000" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="250" height="410"></td>
+              <td width="76" align="left" valign="bottom"><img src="img/thomas.png" alt="Thomas" width="76" height="221"/></td>
+              
+              <td align="left" valign="bottom"><img src="img/david.png" width="61" height="207" border="0" /></td>
+                                      
+              <td align="left" valign="bottom"><img src="img/victor.png" width="65" height="222" border="0" /></td>
+                           
+              <td align="center" valign="bottom"><img src="img/sophia.png" width="63" height="192"/></td>
+              
+              <td align="center" valign="bottom"><img src="img/william.png" width="65" height="211" border="0" /></td>
+              
+              <td align="left" valign="bottom"><img src="img/igor.png" alt="Daniel" width="62" height="228" border="0" /></td>
+              
+              <td align="left" valign="bottom"><img src="img/marcus.png" width="68" height="238" border="0" /></td>
+              
+              <td align="left" valign="bottom"><img src="img/laura.png" alt="Laura" width="61" height="227" border="0" /></td>
+              
+              
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Slideshow 12 -->
+      <div class="slide">
+        <div class="slide-12"></div>
+      </div>
+      <!-- Slideshow 13 -->
+      <div class="slide">
+        <div class="slide-13">
+        <table width="180" border="0" align="right" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="70" height="450" align="right"><a href="http://mba42.com/Home" target="_blank"><img src="img/bot-go.png" alt="GO!" width="68" height="22" border="0" /></a></td>
+            <td align="right">&nbsp;</td>
+          </tr>
+        </table></div>
+        
+      </div>
+
+      <!-- Slideshow FIM -->
+    </div>
+  </div>
+  </div>
+</body>
+</html>
