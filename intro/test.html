@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MBA42</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        .container {
+            background: url(/intro/css/images/bg_01.png) no-repeat;
+            width: 1100px;
+            height: 700px;
+            padding-left: 20px;
+            padding-top: 80px;
+            margin-left: 0;
+        }
+        .jumbotron {
+            text-align: center;
+            font-size: 14px;
+
+        }
+        .jumbotron p {
+            margin: 0 0 10px;
+        }
+        .maincontent {
+
+        }
+    </style>
+     <script type="text/javascript" src="js3/jquery-1.9.1.min.js"></script>
+     <!--<script type="text/javascript" src="scripts/jquery-1.3.2.min.js"></script>-->
+     <script type="text/javascript" src="js3/jquery-ui-1.10.1.min.js"></script>
+     <script src="js3/knockout-2.2.1.js"></script>
+     <script src="js3/knockout.mapping-latest.js"></script>
+
+
+    <script type="text/javascript" src="js3/mb42.psicoTest.js"></script>
+    <script type="text/javascript" src="js3/PsicoTestQuestions.js"></script>
+
+
+  </head>
+    <!--MAIN CONTAINER-->
+    <div id="m42MainContainer">
+
+
+        <div class="jumbotron" id="divTestBegin">
+            <p>
+                <img alt="Personas" src="img/all.png" /></p>
+
+            <p>Your path towards admission to your most-desired MBA program has been pursued by various former applicants, all of whom currently successful MBAs.</p>
+
+            <p>Applicants with different profiles will find different difficulties during their application journey to business school.</p>
+
+            <p>You can maximize your potential by following the trail of a person who holds the same profile as you.</p>
+
+            <p>Take the<strong> MBA Profile Identification Test</strong> and understand how this Persona succeeded.</p>
+
+            <p>
+                <input class="btn" onclick="startPsicoTest()" type="button" value="TEST" /></p>
+        </div>
+
+        <div id="divPsicoTest" style="display: none;">
+            <div class="offset1" data-bind="visible: !finished()">
+                <div><strong>Instructions:</strong></div>
+
+                <ol class="offset1">
+                    <li>Please choose one option in response to each question;</li>
+                    <li>Please respond to all questions;</li>
+                    <li>When responding to the questions, please choose the one you agree with most. Please<br />
+                        answer only in terms of&nbsp;whether the statement describes what you are like (not what you<br />
+                        would find desirable).</li>
+                </ol>
+
+                <div data-bind="template: { name: 'tplQuestion', data: currentQuestion() }">&nbsp;</div>
+                <br />
+                <input class="btn" data-bind="click: prevQuestion, disable: questionIndex() == 0" type="button" value="previous" />
+                <input class="btn" data-bind="click: nextQuestion, disable: finished() || !$root.currentQuestion().answered()" type="button" value="next" />
+                <input class="btn" data-bind="click: finish" type="button" value="finish" style="display:none;"/>
+            </div>
+
+            <div data-bind="visible: finished()">
+                <p class="offset1"><b>Result:</b> <span data-bind="text: $root.result().id"></span><br/>
+        <!--<b>Action: see your hero’s profile <a data-bind="attr: { href: $root.result().page } " style="font-size: 14px;">here</a></span></p>-->
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/html" id="tplQuestion">
+            <div>
+                <p>
+                    <span data-bind="text: $root.questionIndex() + 1"></span> of <span data-bind="    text: $root.questions().length"></span> - <span data-bind="    text: text"></span>:
+                </p>
+
+                <ul data-bind="foreach: options">
+                    <li style="list-style: none;">
+                        <label>
+                            <input type="radio" name="answer" data-bind="value: optionType, checked: $parent.selectedType, click: $root.nextQuestion" class="questionRadio" />
+                            <span data-bind="text: text"></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </script>
+    </div>
+</html>
