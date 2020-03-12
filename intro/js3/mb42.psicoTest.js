@@ -10,10 +10,10 @@ var persona = function (codes, id, name, page) {
 };
 
 var personas = {
-    David: new persona(['INTP', 'ISTP', 'INTJ', 'INFJ'], '1.David; 2.Sophia; 3.William; 4.Laura', 'David Laura, the Innovator', 'http://www.MBA4Heroes.com'),
-    Sophia: new persona(['ISTJ', 'ISFJ', 'ENTJ'], '1.Sophia; 2.William; 3.Laura; 4.David', 'Sophia David, the Conductor', 'http://www.MBA4Heroes.com'),
-    William: new persona(['ESTJ', 'ESTP', 'ESFP', 'ISFP'], '1.William; 2.Laura; 3.David; 4.Sophia', 'William David, the Implementer', 'http://www.MBA4Heroes.com'),
-    Laura: new persona(['ENTP', 'ENFP', 'INFP', 'ENFJ', 'ESFJ'], '1.Laura; 2.David; 3.Sophia; 4.William', 'Laura David, the Mentor', 'http://www.MBA4Heroes.com')
+    David: new persona(['INTP', 'ISTP', 'INTJ', 'INFJ'], '1.1. David; 2.Sophia; 3.William; 4.Laura', 'David Laura, the Innovator', 'http://www.MBA4Heroes.com'),
+    Sophia: new persona(['ISTJ', 'ISFJ', 'ENTJ'], '1.1. Sophia; 2.William; 3.Laura; 4.David', 'Sophia David, the Conductor', 'http://www.MBA4Heroes.com'),
+    William: new persona(['ESTJ', 'ESTP', 'ESFP', 'ISFP'], '1.1. William; 2.Laura; 3.David; 4.Sophia', 'William David, the Implementer', 'http://www.MBA4Heroes.com'),
+    Laura: new persona(['ENTP', 'ENFP', 'INFP', 'ENFJ', 'ESFJ'], '1.1. Laura; 2.David; 3.Sophia; 4.William', 'Laura David, the Mentor', 'http://www.MBA4Heroes.com')
 };
 
 var optionTypes = {
