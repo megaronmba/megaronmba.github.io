@@ -10,10 +10,10 @@ var persona = function (codes, id, name, page) {
 };
 
 var personas = {
-    David: new persona(['INTP', 'ISTP', 'INTJ', 'INFJ'], '1.2.David; 2.Sophia; 3.William; 4.Laura', 'David Laura, the Innovator', 'http://www.MBA4Heroes.com'),
-    Sophia: new persona(['ISTJ', 'ISFJ', 'ENTJ'], '1.2.Sophia; 2.William; 3.Laura; 4.David', 'Sophia David, the Conductor', 'http://www.MBA4Heroes.com'),
-    William: new persona(['ESTJ', 'ESTP', 'ESFP', 'ISFP'], '1.2.William; 2.Laura, the Mentor. Among so many skills, I distinguish myself by valuing the human element in a group. I can bring people together around one goal. Post MBA career plan: Entrepreneurship (Startup) / Public Private Frontiers.', 'William David, the Implementer', 'http://www.MBA4Heroes.com'),
-    Laura: new persona(['ENTP', 'ENFP', 'INFP', 'ENFJ', 'ESFJ'], '1.2.Laura; 2.David; 3.Sophia; 4.William', 'Laura David, the Mentor', 'http://www.MBA4Heroes.com')
+    David: new persona(['INTP', 'ISTP', 'INTJ', 'INFJ'], 'David; the Innovator -  among so many skills, I distinguish myself by offering solutions to highly complex problems - I can relate knowledge between apparently unrelated areas - post MBA career plan Big Tech Companies or Innovative Companies', 'http://www.MBA4Heroes.com'),
+    Sophia: new persona(['ISTJ', 'ISFJ', 'ENTJ'], 'Sophia;  the Strategist - among so many skills, I distinguish myself by offering solutions to problems that require rigorous analysis - I can interact well in a group - post MBA career plan Management Consulting or Strategic Planning in Large Corporations', 'http://www.MBA4Heroes.com'),
+    William: new persona(['ESTJ', 'ESTP', 'ESFP', 'ISFP'], 'William; the Doer - among so many skills, I distinguish myself by being able to combine analysis with implementation - I not only propose solutions, but also press the trigger for execution - post MBA career plan: Private Equity Fund or Entrepreneurial Companies', 'William David, the Implementer', 'http://www.MBA4Heroes.com'),
+    Laura: new persona(['ENTP', 'ENFP', 'INFP', 'ENFJ', 'ESFJ'], 'Laura; among so many skills, I distinguish myself by valuing the human element in a group - I can bring people together around one goal - post MBA career plan: Entrepreneurship (Startup) or Public Private Frontiers', 'http://www.MBA4Heroes.com')
 };
 
 var optionTypes = {
